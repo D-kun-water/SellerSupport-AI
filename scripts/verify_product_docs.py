@@ -12,8 +12,7 @@ sys.path.insert(0,str(ROOT))
 
 
 def verify():
-    from scripts.project_files import DOCUMENTS
-    docs = [ROOT / name for name in DOCUMENTS]
+    docs = [ROOT / 'README.md', *sorted((ROOT / 'docs').rglob('*.md'))]
     missing, empty = [], []
     checked = 0
     for path in docs:

@@ -41,6 +41,13 @@ python -m venv .venv
 
 ## 文档
 
+- [产品分析与文档导航](docs/product/00_产品分析与文档导航.md)
+- [市场与品类分析](docs/product/01_市场与品类分析.md)
+- [用户研究与需求分析](docs/product/02_用户研究与需求分析.md)
+- [竞品与方案分析](docs/product/03_竞品与方案分析.md)
+- [完整 PRD](docs/product/04_PRD.md)
+- [指标与业务验证](docs/product/05_指标与业务验证.md)
+- [来源与证据索引](docs/product/06_来源与证据索引.md)
 - [使用说明](docs/使用说明.md)
 - [开发说明](docs/开发说明.md)
 - [产品与业务规则](docs/产品说明.md)
