@@ -1,0 +1,2 @@
+case_id,source_type,review_mode,question,expected_answer,agent_answer,manual_seconds,agent_wait_seconds,review_seconds,rework_seconds,baseline_error,assisted_error,semantic_decision,reviewer,reviewed_at,evidence_ref
+FIXTURE-1,local,test_review,local input,local expected answer,local fixture output,60,5,10,5,false,false,pass,local-fixture,2026-10-01T10:00:00+08:00,policy.md

@@ -1,0 +1,6 @@
+local CUSTOMER ATTACHMENT / NOT A REAL RECEIPT
+Order reference: TEST-O2
+Cable SKU: TEST-L1
+Device: TEST-D1
+Request: reship one damaged cable, pending supervisor review.
+Customer-provided statements are not published product specifications.

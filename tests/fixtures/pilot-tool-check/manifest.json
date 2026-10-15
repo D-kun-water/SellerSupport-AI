@@ -1,0 +1,15 @@
+{
+  "source_type": "local",
+  "merchant_name": "",
+  "authorization": {
+    "confirmed": false
+  },
+  "files": [
+    {
+      "path": "policy.md",
+      "kind": "local_fixture"
+    }
+  ],
+  "observations_csv": "observations.csv",
+  "knowledge_maintenance_seconds": 10
+}

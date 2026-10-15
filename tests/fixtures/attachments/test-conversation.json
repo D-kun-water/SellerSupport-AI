@@ -1,0 +1,17 @@
+[
+  {
+    "role": "customer",
+    "text": "Does this cable charge TEST-D1?",
+    "received_at": "2026-09-29T10:00:00+00:00"
+  },
+  {
+    "role": "agent",
+    "text": "Please confirm the exact model and use case.",
+    "received_at": "2026-09-29T10:01:00+00:00"
+  },
+  {
+    "role": "customer",
+    "text": "TEST-D1, charging only. I have attached a receipt.",
+    "received_at": "2026-09-29T10:02:00+00:00"
+  }
+]

@@ -1,0 +1,3422 @@
+{
+  "dataset_version": "s2-complex-v1",
+  "source_type": "local",
+  "human_review": "pending",
+  "independent_scenarios": 16,
+  "cases": [
+    {
+      "id": "S2C-001",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "device_correction_after_first_message",
+      "scenario_family": "s2-complex-device_correction_after_first_message",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "conflicts with the confirmed record"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [
+        {
+          "message": "Correction: actually TEST-D2, not TEST-D1."
+        }
+      ],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-002",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "safety_refund_and_tracking",
+      "scenario_family": "s2-complex-safety_refund_and_tracking",
+      "split": "regression",
+      "ticket": {
+        "message": "The charger is smoking. Where is my parcel? Please refund my order.",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "stop using",
+          "tracking question remains pending",
+          "return or refund question remains pending"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-003",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "stale_tracking_snapshot",
+      "scenario_family": "s2-complex-stale_tracking_snapshot",
+      "split": "regression",
+      "ticket": {
+        "message": "Where is my parcel?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:02+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "snapshot is stale"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "orders",
+          "object": {
+            "id": "TEST-O1",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "customer_ref": "TEST-CUSTOMER-1",
+            "version": 1,
+            "sku": "TEST-L1",
+            "quantity": 1,
+            "currency": "USD",
+            "paid": "19.99",
+            "refunded": "0.00",
+            "status": "delivered",
+            "ordered_at": "2026-08-20T09:00:00+00:00",
+            "shipped_at": "2026-08-22T08:00:00+00:00",
+            "delivered_at": "2026-08-30T12:00:00+00:00",
+            "observed_at": "2026-09-29T12:00:00+00:00",
+            "last_tracking_at": "2026-08-30T12:00:00+00:00",
+            "max_age_seconds": 1,
+            "carrier": "TEST-CARRIER",
+            "tracking_ref": "TEST-TRACK-1"
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-004",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "snapshot_from_future",
+      "scenario_family": "s2-complex-snapshot_from_future",
+      "split": "regression",
+      "ticket": {
+        "message": "Where is my parcel?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T11:59:59+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "snapshot timing needs human verification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-005",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "tracking_event_from_future",
+      "scenario_family": "s2-complex-tracking_event_from_future",
+      "split": "regression",
+      "ticket": {
+        "message": "Where is my parcel?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "snapshot timing needs human verification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "orders",
+          "object": {
+            "id": "TEST-O1",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "customer_ref": "TEST-CUSTOMER-1",
+            "version": 1,
+            "sku": "TEST-L1",
+            "quantity": 1,
+            "currency": "USD",
+            "paid": "19.99",
+            "refunded": "0.00",
+            "status": "delivered",
+            "ordered_at": "2026-08-20T09:00:00+00:00",
+            "shipped_at": "2026-08-22T08:00:00+00:00",
+            "delivered_at": "2026-08-30T12:00:00+00:00",
+            "observed_at": "2026-09-29T12:00:00+00:00",
+            "last_tracking_at": "2026-10-01T00:00:00+00:00",
+            "max_age_seconds": 86400,
+            "carrier": "TEST-CARRIER",
+            "tracking_ref": "TEST-TRACK-1"
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-006",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "return_policy_not_published",
+      "scenario_family": "s2-complex-return_policy_not_published",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I return this?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "policy needs human verification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "policies",
+          "object": {
+            "id": "TEST-RET-US-v1",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "region": "US",
+            "channel": "direct",
+            "kind": "returns",
+            "version": "1.0",
+            "valid_from": "2026-01-01T00:00:00+00:00",
+            "valid_to": null,
+            "window_days": 30,
+            "timezone": "UTC",
+            "review_status": "draft",
+            "source_id": "SRC-POLICY-US"
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-007",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "two_active_return_policies",
+      "scenario_family": "s2-complex-two_active_return_policies",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I return this?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "policy needs human verification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "policies",
+          "object": {
+            "id": "TEST-POLICY-CONFLICT",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "region": "US",
+            "channel": "direct",
+            "kind": "returns",
+            "version": "1.0",
+            "valid_from": "2026-01-01T00:00:00+00:00",
+            "valid_to": null,
+            "window_days": 45,
+            "timezone": "UTC",
+            "review_status": "published",
+            "source_id": "SRC-POLICY-US"
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-008",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "two_active_same_sku_versions",
+      "scenario_family": "s2-complex-two_active_same_sku_versions",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "unambiguous published specification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "products",
+          "object": {
+            "id": "TEST-L1-CONFLICT",
+            "sku": "TEST-L1",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "category": "cable",
+            "name": "60W USB-C 线材 / 1m",
+            "region": "US",
+            "version": "1.0",
+            "review_status": "published",
+            "validation": "local_machine_checked_pending_human",
+            "valid_from": "2026-01-01T00:00:00+00:00",
+            "valid_to": null,
+            "source_id": "SRC-TEST-L1",
+            "power_w": 60,
+            "connector": "USB-C to USB-C",
+            "data_rate_mbps": 480,
+            "video_support": false,
+            "rules": [
+              {
+                "device_id": "TEST-D1",
+                "use_case": "charging",
+                "result": "conditional",
+                "conditions": [
+                  "Use a verified USB-C PD power adapter.",
+                  "This cable does not provide video output."
+                ]
+              },
+              {
+                "device_id": "TEST-D1",
+                "use_case": "video",
+                "result": "incompatible",
+                "conditions": [
+                  "This USB 2.0 cable has no video capability."
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-009",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "published_product_archived_source",
+      "scenario_family": "s2-complex-published_product_archived_source",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": "NO_EVIDENCE"
+      },
+      "fixtures": [
+        {
+          "table": "sources",
+          "current_source_for_sku": "TEST-L1",
+          "changes": {
+            "status": "disabled"
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-010",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "product_expiry_exact_boundary",
+      "scenario_family": "s2-complex-product_expiry_exact_boundary",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "unambiguous published specification"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [
+        {
+          "table": "products",
+          "object": {
+            "id": "TEST-L1",
+            "sku": "TEST-L1",
+            "shop_id": "TEST-SHOP",
+            "source_type": "local",
+            "category": "cable",
+            "name": "60W USB-C 线材 / 1m",
+            "region": "US",
+            "version": "1.0",
+            "review_status": "published",
+            "validation": "local_machine_checked_pending_human",
+            "valid_from": "2026-01-01T00:00:00+00:00",
+            "valid_to": "2026-09-29T12:00:00+00:00",
+            "source_id": "SRC-TEST-L1",
+            "power_w": 60,
+            "connector": "USB-C to USB-C",
+            "data_rate_mbps": 480,
+            "video_support": false,
+            "rules": [
+              {
+                "device_id": "TEST-D1",
+                "use_case": "charging",
+                "result": "conditional",
+                "conditions": [
+                  "Use a verified USB-C PD power adapter.",
+                  "This cable does not provide video output."
+                ]
+              },
+              {
+                "device_id": "TEST-D1",
+                "use_case": "video",
+                "result": "incompatible",
+                "conditions": [
+                  "This USB 2.0 cable has no video capability."
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-011",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "restricted_actor_cannot_create_order_ticket",
+      "scenario_family": "s2-complex-restricted_actor_cannot_create_order_ticket",
+      "split": "regression",
+      "ticket": {
+        "message": "Refund my order",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O2"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": "FORBIDDEN"
+      },
+      "fixtures": [],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-012",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "clarification_then_explicit_model",
+      "scenario_family": "s2-complex-clarification_then_explicit_model",
+      "split": "regression",
+      "ticket": {
+        "message": "Does this work with my iPad?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": null,
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "draft",
+        "required_fragments": [
+          "verified USB-C PD",
+          "does not provide video"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [
+        {
+          "device_id": "TEST-D1",
+          "message": "The exact device is TEST-D1 and I need charging."
+        }
+      ],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-013",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "return_and_tracking_both_preserved",
+      "scenario_family": "s2-complex-return_and_tracking_both_preserved",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I return this? Also where is my parcel?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O1"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "draft",
+        "required_fragments": [
+          "no refund has been approved or executed",
+          "tracking question remains pending"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-014",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "missing_delivery_multi_intent",
+      "scenario_family": "s2-complex-missing_delivery_multi_intent",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I return this? Also where is my parcel?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": "TEST-O2"
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "need_clarification",
+        "required_fragments": [
+          "exact time",
+          "tracking question remains pending"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-015",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "confirmed_model_changed_in_fields",
+      "scenario_family": "s2-complex-confirmed_model_changed_in_fields",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "has not been verified"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [
+        {
+          "device_id": "TEST-D2",
+          "message": "Please check charging for this model."
+        }
+      ],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    },
+    {
+      "id": "S2C-016",
+      "version": 1,
+      "state": "pending",
+      "reviewer": null,
+      "source_type": "local",
+      "scenario": "sku_changes_to_unverified_cable",
+      "scenario_family": "s2-complex-sku_changes_to_unverified_cable",
+      "split": "regression",
+      "ticket": {
+        "message": "Can I charge TEST-D1 with this cable?",
+        "source_type": "local",
+        "sku": "TEST-L1",
+        "device_id": "TEST-D1",
+        "use_case": "charging",
+        "region": "US",
+        "channel": "direct",
+        "order_id": null
+      },
+      "as_of": "2026-09-29T12:00:00+00:00",
+      "expected": {
+        "status": "escalated",
+        "required_fragments": [
+          "has not been verified"
+        ],
+        "forbidden_fragments": [
+          "Your refund has been processed."
+        ],
+        "error_code": null
+      },
+      "fixtures": [],
+      "follow_ups": [
+        {
+          "sku": "TEST-L2",
+          "message": "I selected TEST-L2 instead; check charging."
+        }
+      ],
+      "actor_scope": {
+        "role": "agent",
+        "orders": [
+          "TEST-O1",
+          "TEST-O2",
+          "TEST-O3",
+          "TEST-O4"
+        ]
+      },
+      "evidence_refs": [
+        {
+          "id": "SRC-TEST-C1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C1.md#specification",
+          "text": "TEST-C1 is a sample product. Name: 单口 30W USB-C 充电器 / US. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C to USB-C cable. 30W is the adapter maximum; actual device draw can be lower. ",
+          "checksum": "9099ad360748575443efc2b584d4ef1a6d27b7a79de7fb9afe0eadcce8f3590b",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C2.md#specification",
+          "text": "TEST-C2 is a sample product. Name: 单口 20W USB-C 充电器 / US. Maximum rated power: 20 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "c699abf2f940f56bce56dd8c325d5a8bdfa9e87815e83ff013f75882b8f1e204",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L1.md#specification",
+          "text": "TEST-L1 is a sample product. Name: 60W USB-C 线材 / 1m. Maximum rated power: 60 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. Rule for TEST-D1/charging: conditional. Use a verified USB-C PD power adapter. This cable does not provide video output. Rule for TEST-D1/video: incompatible. This USB 2.0 cable has no video capability. ",
+          "checksum": "6c4985bb7490dbb3a466f521fb209886487c1f42b29080dd1746e6b3ac9e1cd0",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L2",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L2.md#specification",
+          "text": "TEST-L2 is a sample product. Name: 100W USB-C 线材 / 2m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "0a8bd45df01c2f0316c58ff37e7471ec5adf26aa7aa01f82e7359e206575ad76",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C3.md#specification",
+          "text": "TEST-C3 is a sample product. Name: 单口 65W USB-C 充电器 / US. Maximum rated power: 65 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "bacc3ae187d7974e3e0e48319797bfc29889c5a9523d218d1b485a99aa255f06",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C4.md#specification",
+          "text": "TEST-C4 is a sample product. Name: 双口 45W 充电器 / US. Maximum rated power: 45 W. Connector: 2 x USB-C. Single port up to 45W. With both ports occupied: 25W + 20W, total 45W. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "81e388c2bd91fd484bc98bdbb6b4a96fa922024235849b8d4ade76fd0650c4a9",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-C5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-C5.md#specification",
+          "text": "TEST-C5 is a sample product. Name: 单口 30W USB-C 充电器 / EU. Maximum rated power: 30 W. Connector: USB-C. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "16175804dd32136e1d3b8ce60b96b61bfd74370cdcb15db8dce5922012fc0e2a",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L3",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L3.md#specification",
+          "text": "TEST-L3 is a sample product. Name: 240W USB-C 线材 / 1m. Maximum rated power: 240 W. Connector: USB-C to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "6a8204908cd18b2d9214b699fb944bc217b7ecf5caa74e47fb363c94e2afaead",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L4",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L4.md#specification",
+          "text": "TEST-L4 is a sample product. Name: 15W USB-A 转 USB-C 线材 / 1m. Maximum rated power: 15 W. Connector: USB-A to USB-C. Data rate: 480 Mbps. Video support: False. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2e6b7bfd2855750d32e702bcb451e712a0e8aaba8b2dbfeba6170eb6a3263170",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-L5",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-L5.md#specification",
+          "text": "TEST-L5 is a sample product. Name: 100W 视频 USB-C 线材 / 1m. Maximum rated power: 100 W. Connector: USB-C to USB-C. Data rate: 10000 Mbps. Video support: True. Video needs both a verified DP Alt Mode source and a compatible display; connectors alone are insufficient. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "7b7864f1a59f75462e908d0c044cc4bfd302c224a88f3500436a1e388b995243",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-S1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-S1.md#specification",
+          "text": "TEST-S1 is a sample product. Name: 非电动桌面支架. test supported screen size: 4.7–12.9 inches; maximum device mass 800g. No charging function. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "195db9ecd423f3e8633396ae451821506a1c065fd8785359202aa9968d972473",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-TEST-K1",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/manuals/TEST-K1.md#specification",
+          "text": "TEST-K1 is a sample product. Name: TEST-D1 专用保护壳. Fits TEST-D1 only; other devices are unverified. For failure, contact support. No disassembly or generic reset procedure is authorized. ",
+          "checksum": "2d53240ed25e3f892d2970257c5f070b2fd4f0e1d76bfacf5dc1035b40a5f3cb",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目合成：非真实品牌，非实验检测结果",
+          "review_status": "machine_checked_pending_human"
+        },
+        {
+          "id": "SRC-POLICY-US",
+          "source_type": "local",
+          "status": "published",
+          "version": "1.0",
+          "locator": "tests/fixtures/售后与物流政策.md#退货",
+          "text": "test US direct-store return window is inclusive of 30 x 24 hours from confirmed delivery to request time. Delivery timestamp and UTC reference time are required. Time eligibility alone is not approval. Condition, original order evidence and remaining refundable amount require manual review. Do not promise a refund, return label or carrier investigation without a recorded action. For burning smell, smoke or abnormal heat, stop normal troubleshooting and route to a human safety queue. Do not ask the customer to charge again or disassemble the device.",
+          "checksum": "55e1a1cbfd541cb3c99b9c2ea9d01e57519ed1390234c00055452730d9fde76c",
+          "captured_at": "2026-09-29T12:00:00+00:00",
+          "origin": "项目测试商家政策；不代表平台或品牌规定",
+          "review_status": "machine_checked_pending_human"
+        }
+      ],
+      "review_scope": "pending_human_not_gold"
+    }
+  ],
+  "dataset_kind": "test"
+}

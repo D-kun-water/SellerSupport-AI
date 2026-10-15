@@ -1,0 +1,5 @@
+.table-scroll{overflow-x:auto}.table-scroll table{min-width:760px}
+.candidate{padding:16px;margin:16px 0;background:#fff8e8;border:1px solid #e6d4a6;border-radius:8px}
+.candidate button{display:block;margin-top:12px}
+details{border-bottom:1px solid #e8edf3;padding:12px 0}summary{cursor:pointer;font-size:13px}
+details p{overflow-wrap:anywhere}details pre{max-height:400px;overflow:auto;overflow-wrap:anywhere}

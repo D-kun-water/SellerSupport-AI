@@ -1,0 +1,8 @@
+{
+  "source_type": "merchant_authorized",
+  "merchant_name": "",
+  "authorization": {"confirmed": false, "approved_by": "", "reference": "", "scope": ["local_offline"]},
+  "files": [{"path": "merchant-policy.md", "kind": "merchant_confirmed_policy"}],
+  "observations_csv": "observations.csv",
+  "knowledge_maintenance_seconds": null
+}

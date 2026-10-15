@@ -1,0 +1,1 @@
+local tool fixture. No merchant authorization or real measured outcomes.

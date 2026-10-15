@@ -1,0 +1,260 @@
+{
+  "source_type": "local",
+  "real_merchant": false,
+  "initialize": {
+    "shop_id": "SYNTH-BETA",
+    "name": "Beta独立合成配件商家",
+    "source_type": "local",
+    "members": [
+      {
+        "id": "beta-manager",
+        "label": "Beta主管",
+        "role": "supervisor",
+        "token": "beta-manager-local-local"
+      },
+      {
+        "id": "beta-support",
+        "label": "Beta客服",
+        "role": "agent",
+        "token": "beta-support-local-local"
+      },
+      {
+        "id": "beta-reviewer",
+        "label": "Beta受限客服",
+        "role": "agent",
+        "token": "beta-reviewer-local-local"
+      }
+    ]
+  },
+  "products": [
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "US",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-CABLE-01",
+      "sku": "BETA-CABLE-01",
+      "category": "cable",
+      "name": "第二商家合成配件 BETA-CABLE-01",
+      "power_w": 60,
+      "connector": "USB-C",
+      "data_rate_mbps": 480,
+      "video_support": false,
+      "rules": [
+        {
+          "device_id": "BETA-PAD-01",
+          "use_case": "charging",
+          "result": "conditional",
+          "conditions": [
+            "Use a verified USB-C adapter.",
+            "Actual device draw may be below the rated maximum."
+          ]
+        }
+      ]
+    },
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "US",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-CHARGER-02",
+      "sku": "BETA-CHARGER-02",
+      "category": "charger",
+      "name": "第二商家合成配件 BETA-CHARGER-02",
+      "power_w": 45,
+      "connector": "USB-C",
+      "data_rate_mbps": 480,
+      "video_support": false,
+      "rules": [
+        {
+          "device_id": "BETA-PAD-01",
+          "use_case": "charging",
+          "result": "conditional",
+          "conditions": [
+            "Use a verified USB-C adapter.",
+            "Actual device draw may be below the rated maximum."
+          ]
+        }
+      ]
+    },
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "EU",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-CABLE-EU",
+      "sku": "BETA-CABLE-EU",
+      "category": "cable",
+      "name": "第二商家合成配件 BETA-CABLE-EU",
+      "power_w": 100,
+      "connector": "USB-C",
+      "data_rate_mbps": 480,
+      "video_support": false,
+      "rules": [
+        {
+          "device_id": "BETA-PAD-01",
+          "use_case": "charging",
+          "result": "conditional",
+          "conditions": [
+            "Use a verified USB-C adapter.",
+            "Actual device draw may be below the rated maximum."
+          ]
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "US",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-RETURNS-US",
+      "kind": "returns",
+      "channel": "direct",
+      "window_days": 21,
+      "timezone": "UTC",
+      "original_sku_only": true,
+      "quantity_limit": "original_order_quantity"
+    },
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "US",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-RESHIPS-US",
+      "kind": "reships",
+      "channel": "direct",
+      "window_days": null,
+      "timezone": "UTC",
+      "original_sku_only": true,
+      "quantity_limit": "original_order_quantity"
+    },
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "EU",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-RETURNS-EU",
+      "kind": "returns",
+      "channel": "direct",
+      "window_days": 14,
+      "timezone": "UTC",
+      "original_sku_only": true,
+      "quantity_limit": "original_order_quantity"
+    },
+    {
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "region": "EU",
+      "version": "1.0",
+      "valid_from": "2026-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "id": "BETA-RESHIPS-EU",
+      "kind": "reships",
+      "channel": "direct",
+      "window_days": null,
+      "timezone": "UTC",
+      "original_sku_only": true,
+      "quantity_limit": "original_order_quantity"
+    }
+  ],
+  "orders": [
+    {
+      "id": "BETA-O1",
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "customer_ref": "BETA-CUSTOMER-1",
+      "region": "US",
+      "channel": "direct",
+      "currency": "USD",
+      "paid": "79.90",
+      "status": "delivered",
+      "ordered_at": "2026-09-23T09:58:20.285743+00:00",
+      "shipped_at": "2026-09-24T09:58:20.285743+00:00",
+      "delivered_at": "2026-09-29T09:58:20.285743+00:00",
+      "observed_at": "2026-10-01T09:58:20.285743+00:00",
+      "last_tracking_at": "2026-10-01T07:58:20.285743+00:00",
+      "max_age_seconds": 86400,
+      "carrier": "SYNTH-BETA-CARRIER",
+      "tracking_ref": "BETA-TRACK-1",
+      "lines": [
+        {
+          "id": "BETA-O1-L1",
+          "sku": "BETA-CABLE-01",
+          "quantity": 2
+        },
+        {
+          "id": "BETA-O1-L2",
+          "sku": "BETA-CHARGER-02",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "BETA-O2",
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "customer_ref": "BETA-CUSTOMER-2",
+      "region": "US",
+      "channel": "direct",
+      "currency": "USD",
+      "paid": "79.90",
+      "status": "in_transit",
+      "ordered_at": "2026-09-23T09:58:20.285743+00:00",
+      "shipped_at": "2026-09-24T09:58:20.285743+00:00",
+      "delivered_at": null,
+      "observed_at": "2026-10-01T09:58:20.285743+00:00",
+      "last_tracking_at": "2026-10-01T07:58:20.285743+00:00",
+      "max_age_seconds": 86400,
+      "carrier": "SYNTH-BETA-CARRIER",
+      "tracking_ref": "BETA-TRACK-2",
+      "lines": [
+        {
+          "id": "BETA-O2-L1",
+          "sku": "BETA-CABLE-01",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "BETA-O3",
+      "shop_id": "SYNTH-BETA",
+      "source_type": "local",
+      "customer_ref": "BETA-CUSTOMER-3",
+      "region": "EU",
+      "channel": "direct",
+      "currency": "USD",
+      "paid": "79.90",
+      "status": "delivered",
+      "ordered_at": "2026-09-23T09:58:20.285743+00:00",
+      "shipped_at": "2026-09-24T09:58:20.285743+00:00",
+      "delivered_at": "2026-09-29T09:58:20.285743+00:00",
+      "observed_at": "2026-10-01T09:58:20.285743+00:00",
+      "last_tracking_at": "2026-10-01T07:58:20.285743+00:00",
+      "max_age_seconds": 86400,
+      "carrier": "SYNTH-BETA-CARRIER",
+      "tracking_ref": "BETA-TRACK-3",
+      "lines": [
+        {
+          "id": "BETA-O3-L1",
+          "sku": "BETA-CABLE-EU",
+          "quantity": 2
+        }
+      ]
+    }
+  ],
+  "source_text": "独立第二商家合成资料。参数、规则、生效范围与结构化事实一同编写，仅用于本地功能验收，不代表真实商品或经营效果。"
+}
